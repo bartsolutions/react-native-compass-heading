@@ -71,8 +71,8 @@ public class CompassHeadingModule extends ReactContextBaseJavaModule implements 
       Sensor gsensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
       Sensor msensor = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
 
-      sensorManager.registerListener(this, gsensor, SensorManager.SENSOR_DELAY_GAME);
-      sensorManager.registerListener(this, msensor, SensorManager.SENSOR_DELAY_GAME);
+      sensorManager.registerListener(this, gsensor, SensorManager.SENSOR_DELAY_UI);
+      sensorManager.registerListener(this, msensor, SensorManager.SENSOR_DELAY_UI);
 
       mFilter = filter;
       promise.resolve(true);
