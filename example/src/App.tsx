@@ -17,14 +17,12 @@ const App = () => {
   React.useEffect(() => {
     const degree_update_rate = 3;
 
-    CompassHeading.start(degree_update_rate, (data) => {
+    const unsubscribe = CompassHeading.start(degree_update_rate, (data) => {
       setHeading(data.heading);
       setAccuracy(data.accuracy);
     });
 
-    return () => {
-      CompassHeading.stop();
-    };
+    return unsubscribe;
   }, []);
   return (
     <View style={styles.container}>
