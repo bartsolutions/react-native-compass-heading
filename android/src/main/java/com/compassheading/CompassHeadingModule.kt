@@ -51,8 +51,8 @@ class CompassHeadingModule(reactContext: ReactApplicationContext) :
             sensorManager = mApplicationContext.getSystemService(Context.SENSOR_SERVICE) as SensorManager
             val gsensor = sensorManager?.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
             val msensor = sensorManager?.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)
-            sensorManager?.registerListener(this, gsensor, SensorManager.SENSOR_DELAY_GAME)
-            sensorManager?.registerListener(this, msensor, SensorManager.SENSOR_DELAY_GAME)
+            sensorManager?.registerListener(this, gsensor, SensorManager.SENSOR_DELAY_UI)
+            sensorManager?.registerListener(this, msensor, SensorManager.SENSOR_DELAY_UI)
             mFilter = filter
             Log.d(NAME, "Compass heading started with filter: $mFilter")
             promise.resolve(true)
